@@ -13,7 +13,7 @@ import tornado.web
 import tornado.wsgi
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-os.environ['DJANGO_SETTINGS_MODULE'] = "cmdb.settings"
+os.environ['DJANGO_SETTINGS_MODULE'] = "conf.settings"
 
 define('port', type=int, default=8000)
 # deploy or debug
@@ -34,7 +34,7 @@ def main():
          ])
     server = tornado.httpserver.HTTPServer(tornado_app)
     server.listen(options.port)
-    logging.warn("[CMDB] CMDB is running on: localhost:%d", options.port)
+    logging.warn("[CMDB] CMDB is running on localhost:%d", options.port)
     tornado.ioloop.IOLoop.instance().start()
 
 
