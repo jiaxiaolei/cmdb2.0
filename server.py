@@ -5,8 +5,6 @@ import sys
 import logging
 
 from tornado.options import options, define, parse_command_line
-import django.core.handlers.wsgi
-# use get_wsgi_application
 from django.core.wsgi import get_wsgi_application
 
 import tornado.httpserver
@@ -28,9 +26,6 @@ def main():
     if options.mode.lower() == "debug":
         from tornado import autoreload
         autoreload.start()
-
-    # wsgi_app = tornado.wsgi.WSGIContainer(
-    #    django.core.handlers.wsgi.WSGIHandler())
 
     wsgi_app = tornado.wsgi.WSGIContainer(get_wsgi_application())
 
