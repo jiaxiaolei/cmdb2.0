@@ -1,0 +1,12 @@
+
+# web framework
+Django==1.11.3
+
+# driver for orientdb
+pyorient==1.5.5
+
+# config
+oslo.config==4.11.0
+
+# WSGI Server
+tornado==4.5.1
