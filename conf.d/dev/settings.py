@@ -39,8 +39,31 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # myself
+    'rest_framework',
+
     'uweb'
 ]
+
+
+
+# set the pagenation and permission
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+            'rest_framework.permissions.IsAdminUser',
+    ],
+
+    #'DEFAULT_RENDERER_CLASSES': (
+    #    'rest_framework.renderers.JSONRenderer',
+    #),
+
+    #'DEFAULT_PARSER_CLASSES': (
+    #    'rest_framework.parsers.JSONParser',
+    #),
+
+    'PAGE_SIZE': 10
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,12 +102,12 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
