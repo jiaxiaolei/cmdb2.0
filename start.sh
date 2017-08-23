@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-python server.py --logging=DEBUG
+python server.py --port=9999 --logging=DEBUG
