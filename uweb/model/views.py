@@ -14,25 +14,9 @@ from django.contrib.auth.models import User, Group
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-#from rest_framework import authentication, permissions
-
-
+from rest_framework import authentication, permissions
 
 # Create your views here.
- 
-def index(request):
-    return HttpResponse(u"Welcome to cmdb2.0!")
-
-@api_view(['GET', 'POST'])
-def test(request):
-    ret = dict(code=0,
-               message='success',
-               data={})
-    #return JsonResponse(ret)
-    return Response(ret)
-    #return Response(data = {'a':'jia'}, status=200)
-
-
 
 class ListUsers(APIView):
     """ 
@@ -45,7 +29,20 @@ class ListUsers(APIView):
     
     def get(self, request, format=None): 
         """ Return a list of all users.  """ 
-        usernames = [user.username for user in User.objects.all()] 
-        #usernames = ['jia','xiao','lei']
+        usernames = ['test', 'in', 'module'] 
+        #usernames = [user.username for user in User.objects.all()] 
         return Response(usernames)
+
+    def post(self, request, format=None): 
+        usernames = ['test', 'in', 'module post'] 
+        return Response(usernames)
+
+    def put(self, request, format=None): 
+        usernames = ['test', 'in', 'module put'] 
+        return Response(usernames)
+
+    def delete(self, request, format=None): 
+        usernames = ['test', 'in', 'module delete'] 
+        return Response(usernames)
+
 

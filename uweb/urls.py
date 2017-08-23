@@ -16,12 +16,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
-from uweb import views as uweb_views  # new
+
+from uweb import views as uweb_views 
+from uweb.model import views as model_views
+
 
 urlpatterns = [
-    url(r'^$', uweb_views.index),  # new
-    url(r'^test/', uweb_views.test),  # new
+    url(r'^$', uweb_views.index), 
+    url(r'^test/', uweb_views.test), 
+
+    url(r'list/$', uweb_views.ListUsers.as_view()),
+    url(r'^cmdb/api/model/$', model_views.ListUsers.as_view()),
     
     url(r'^admin/', admin.site.urls),
-    url(r'^cmdb/api/', include('uweb.urls')),
+
+    # NOUSED.
+    #url(r'^cmdb/api/', include('uweb.urls')),
+
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
