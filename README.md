@@ -16,3 +16,7 @@ $ mkvirtualenv py2.7.13cmdb2.0 -p /root/.pyenv/versions/2.7.13/bin/python --no-s
 $ pep8 server.py
 ```
 
+```
+$ python manage.py collectstatic -link --noinput
+```
+
