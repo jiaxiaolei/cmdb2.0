@@ -20,6 +20,8 @@ from django.contrib import admin
 from uweb import views as uweb_views 
 from uweb.model import views as model_views
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     url(r'^$', uweb_views.index), 
@@ -33,5 +35,14 @@ urlpatterns = [
     # NOUSED.
     #url(r'^cmdb/api/', include('uweb.urls')),
 
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    # graphiql
+    url(r'^graphiql', include('django_graphiql.urls')),
+
+    # rest_framework
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
 ]
+
+# add static url
+urlpatterns += staticfiles_urlpatterns()
+
