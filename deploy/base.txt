@@ -12,3 +12,5 @@ oslo.config==4.11.0
 
 # WSGI Server
 tornado==4.5.1
+
+django-graphiql==0.4.4
