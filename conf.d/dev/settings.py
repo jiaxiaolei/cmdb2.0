@@ -41,12 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # myself
+    ## our apps 
+    # rest_framework 
     'rest_framework',
     # graphiql
     'django_graphiql',
 
-    'uweb'
+    'cmdb'
 ]
 
 
