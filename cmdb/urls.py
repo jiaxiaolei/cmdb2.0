@@ -17,17 +17,17 @@ from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
 
-from uweb import views as uweb_views 
-from uweb.model import views as model_views
+from cmdb import views as cmdb_views 
+from cmdb.model import views as model_views
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    url(r'^$', uweb_views.index), 
-    url(r'^test/', uweb_views.test), 
+    url(r'^$', cmdb_views.index), 
+    url(r'^test/', cmdb_views.test), 
 
-    url(r'list/$', uweb_views.ListUsers.as_view()),
+    url(r'list/$', cmdb_views.ListUsers.as_view()),
     url(r'^cmdb/api/model/$', model_views.ListUsers.as_view()),
     
     url(r'^admin/', admin.site.urls),
