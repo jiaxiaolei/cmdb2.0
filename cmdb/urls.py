@@ -17,7 +17,8 @@ from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
 
-from cmdb import views as cmdb_views 
+from cmdb.index import views as cmdb_views 
+#from cmdb import views as cmdb_views 
 from cmdb.model import views as model_views
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -25,12 +26,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^$', cmdb_views.index), 
-    url(r'^test/', cmdb_views.test), 
+    #url(r'^test/', cmdb_views.test), 
 
-    url(r'list/$', cmdb_views.ListUsers.as_view()),
-    url(r'^cmdb/api/model/$', model_views.ListUsers.as_view()),
+    #url(r'list/$', cmdb_views.ListUsers.as_view()),
+    #url(r'^cmdb/api/model/$', model_views.ListUsers.as_view()),
     
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
 
     # NOUSED.
     #url(r'^cmdb/api/', include('uweb.urls')),
